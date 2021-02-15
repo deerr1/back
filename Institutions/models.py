@@ -50,6 +50,8 @@ class InfoInstitutions(models.Model):
     preparation = models.CharField(max_length=40, blank=False, verbose_name='Профиль подготовки')
     form = models.IntegerField(choices = FORM, verbose_name='Форма обучения')
     training_period = models.IntegerField(verbose_name='Срок обучения')
+    availability_of_budger = models.BooleanField(default=False,verbose_name='Наличие бюджетных мест')
+    availability_of_paid = models.BooleanField(default=False,verbose_name='Наличие платных мест')
     number_of_budget = models.IntegerField(verbose_name='Количество бюджетных мест')
     number_of_paid = models.IntegerField(verbose_name='Количество платных мест')
     points = models.ManyToManyField(Points, verbose_name='Минимальный балл для участия в конкурсе')
